@@ -11,11 +11,20 @@
       
     function Header({title}) {
       console.log(title)
-      return <h1>Develop. {title} Preview. Ship. 🚀</h1>;
+      return <h1>{title}</h1>;
     }
+
+
 
     function HomePage() {
       const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+      const [likes, setLikes] = React.useState(0);
+
+      function handleClick() {
+        if(likes >= 10) return;
+        setLikes(likes + 1)
+        
+      }
 
       return (
         <div>
@@ -27,6 +36,7 @@
             </li>
               ))}
           </ul>
+          <button onClick={handleClick}>Like({likes})</button>
         </div>
       );
     }
