@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const About = () => {
+const Page = () => {
   return (
     <div>
       <h2>폴더 세그먼트당 page.js 하나씩 필요!</h2>
@@ -12,4 +12,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Page;
