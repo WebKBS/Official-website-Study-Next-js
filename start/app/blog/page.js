@@ -7,11 +7,11 @@ export const metadata = {
 
 const Page = async () => {
   //const posts = await [];
-  const posts = await fetch('https://jsonplaceholder.typicode.com/posts').then((res) => res.json());
+  //const posts = await fetch('https://jsonplaceholder.typicode.com/posts').then((res) => res.json());
 
   return (
     <>
-      <PostList posts={posts} />
+      <PostList />
     </>
   );
 };
