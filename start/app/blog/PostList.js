@@ -3,11 +3,11 @@ import Link from 'next/link';
 const PostList = ({ posts }) => {
   return (
     <ul>
-      {posts.map((post) => {
-        <li key={post.id}>
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-        </li>;
-      })}
+      {posts.map((post) => (
+        <li key={post.id} post={post}>
+          <Link href={`/blog/${post.id}`}>{post.title}</Link>
+        </li>
+      ))}
     </ul>
   );
 };

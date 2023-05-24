@@ -5,29 +5,14 @@ export const metadata = {
   title: 'Next.js',
 };
 
-const Page = () => {
-  const posts = [
-    {
-      id: 'p1',
-      title: 'Hello',
-      slug: 1,
-    },
-    {
-      id: 'p2',
-      title: 'Hello',
-      slug: 2,
-    },
-    {
-      id: 'p3',
-      title: 'Hello',
-      slug: 3,
-    },
-  ];
+const Page = async () => {
+  //const posts = await [];
+  const posts = await fetch('https://jsonplaceholder.typicode.com/posts').then((res) => res.json());
 
   return (
-    <div>
+    <>
       <PostList posts={posts} />
-    </div>
+    </>
   );
 };
 
