@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
     // 루트 레이아웃은 반드시 HTML과 body가 포함 되야함! - 최상위 레이아웃
     <html lang="en">
       <body className={inter.className}>
+        <div>여기는 모달모달</div>
         <header>헤더</header>
         {children}
         <footer>

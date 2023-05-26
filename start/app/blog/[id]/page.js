@@ -1,7 +1,7 @@
 const Page = (props) => {
   return (
     <div>
-      <p></p>
+      <p>{props.id}</p>
     </div>
   );
 };
