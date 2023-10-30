@@ -11,14 +11,14 @@ import {
 import { formatCurrency } from './utils';
 
 export async function fetchRevenue() {
-  // Add noStore() here prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
+  // 응답이 캐시되는 것을 방지하기 위해 noStore()을 여기에 추가하십시오.
+  // 이는 fetch(..., {cache: 'no-store'})와 동등합니다.
 
   try {
-    // Artificially delay a reponse for demo purposes.
-    // Don't do this in real life :)
+    // 데모 목적으로 응답을 인위적으로 지연시키려면 다음과 같이 하십시오.
+    // 실제로는 이렇게 하지 마십시오 :)
 
-    // console.log('Fetching revenue data...');
+    // console.log('수익 데이터 검색 중...');
     // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
@@ -54,9 +54,9 @@ export async function fetchLatestInvoices() {
 
 export async function fetchCardData() {
   try {
-    // You can probably combine these into a single SQL query
-    // However, we are intentionally splitting them to demonstrate
-    // how to initialize multiple queries in parallel with JS.
+    // 아마도 이것들을 하나의 SQL 쿼리로 결합할 수 있을 것입니다.
+    // 그러나 병렬로 여러 쿼리를 초기화하는 방법을 보여주기 위해 일부러 분리하고 있습니다.
+    // JS와 병렬로 여러 쿼리를 초기화하는 방법.
     const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
     const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
     const invoiceStatusPromise = sql`SELECT
@@ -90,7 +90,7 @@ export async function fetchCardData() {
 const ITEMS_PER_PAGE = 6;
 export async function fetchFilteredInvoices(
   query: string,
-  currentPage: number,
+  currentPage: number
 ) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
